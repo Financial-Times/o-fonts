@@ -10,16 +10,6 @@
             "data": { "font": "BentonSans" }
         },
         {
-            "name": "MillerDisplay",
-            "template": "demos/src/family.mustache",
-            "data": { "font": "MillerDisplay" }
-        },
-        {
-            "name": "Clarion",
-            "template": "demos/src/family.mustache",
-            "data": { "font": "Clarion" }
-        },
-        {
             "name": "bentonsans-lighter",
             "data": { "font": "bentonsans-lighter" }
         },
@@ -30,30 +20,6 @@
         {
             "name": "bentonsans-bold",
             "data": { "font": "bentonsans-bold" }
-        },
-        {
-            "name": "millerdisplay-normal",
-            "data": { "font": "millerdisplay-normal" }
-        },
-        {
-            "name": "millerdisplay-bold",
-            "data": { "font": "millerdisplay-bold" }
-        },
-        {
-            "name": "millerdisplay-bolder",
-            "data": { "font": "millerdisplay-bolder" }
-        },
-        {
-            "name": "clarion-normal",
-            "data": { "font": "clarion-normal" }
-        },
-        {
-            "name": "clarion-bold",
-            "data": { "font": "clarion-bold" }
-        },
-        {
-            "name": "clarion-italic",
-            "data": { "font": "clarion-italic" }
         },
         {
             "name": "financierdisplay-normal",
@@ -86,6 +52,22 @@
         {
             "name": "metric-bold-italic",
             "data": { "font": "metric-bold-italic" }
+        },
+        {
+            "name": "georgia-normal",
+            "data": { "font": "georgia-normal" }
+        },
+        {
+            "name": "georgia-italic",
+            "data": { "font": "georgia-italic" }
+        },
+        {
+            "name": "georgia-bold",
+            "data": { "font": "georgia-bold" }
+        },
+        {
+            "name": "georgia-bold-italic",
+            "data": { "font": "georgia-bold-italic" }
         }
     ]
 }

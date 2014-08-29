@@ -28,5 +28,5 @@
 }
 
 @function oFontsUseAsset($asset) {
-  @return $o-fonts-path + $asset;
+  @return oAssetsResolve($asset, o-fonts-assets);
 }
