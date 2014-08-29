@@ -1,0 +1,65 @@
+$o-assets-global-path: '/bower_components/' !default;
+
+$o-assets-paths-map: () !default;
+
+
+// Deprecated - remove in v2
+@function oAssetsUse ($asset, $module, $version) {
+
+    @warn "`oAssetsUse` is deprecated and will be removed in next major release. Use `oAssetsResolve` instead. You should also remove `$#{$module}-version` and `$#{$module}-assets-path` from your module";
+
+    $full-path: $asset;
+
+    // If the version hasn't been set and the module path is just a module name, we can use oAssetsResolve
+    @if ($module and str-index($module, 'o-') == 0 and str-index($module, '/') == null and $version == null) {
+        // looks like the module's used the old syntax but the product hasn't overridden the default paths
+        // using variables, so we should use the new method of checking o-assets-paths-map
+       @return oAssetsResolve ($asset, $module);
+
+    } @else if ($module) {
+        @if ($version) {
+            $full-path: $module + '@' + $version + '/' + $full-path;
+        } @else {
+             $full-path: $module + '/' + $full-path;
+        }
+    }
+
+    @if ($o-assets-global-path) {
+    	$full-path: $o-assets-global-path + $full-path;
+    }
+
+    @return #{$full-path};
+}
+
+@function oAssetsResolve ($asset, $module) {
+
+    $full-path: $asset;
+
+    @if (map-has-key($o-assets-paths-map, $module)) {
+        $module-path: map-get($o-assets-paths-map, $module);
+
+        // allows putting assets in single directory shared by all modules
+        @if ($module-path) {
+            $full-path: $module-path + '/' + $full-path;
+        }
+    } @else {
+        // defaults to use module name
+        $full-path: $module + '/' + $full-path;
+
+        // Only add the global path if a custom path hasn't been set
+        @if ($o-assets-global-path) {
+            $full-path: $o-assets-global-path + $full-path;
+        }
+    }
+
+    @return #{$full-path};
+}
+
+@mixin oAssetsSetModulePaths ($path-map) {
+    $o-assets-paths-map: map-merge($o-assets-paths-map, $path-map);
+}
+
+
+@function oAssetsSetModulePaths ($path-map) {
+    @warn "oAssetsSetModulePaths is a mixin, not a function; use @include oAssetsSetModulePaths($path-map)"
+}

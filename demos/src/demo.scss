@@ -1,4 +1,8 @@
 $o-fonts-is-silent: false;
+$o-assets-paths-map: (
+  o-fonts-assets: '//build.origami.ft.com/files/o-fonts-assets'
+);
+
 @import "../../main";
 
 .demo-container {
@@ -30,14 +34,6 @@ $o-fonts-is-silent: false;
   font-family: oFontsGetFontFamilyWithFallbacks(BentonSans);
 }
 
-.demo-family-MillerDisplay .demo-example {
-  font-family: oFontsGetFontFamilyWithFallbacks(MillerDisplay);
-}
-
-.demo-family-Clarion .demo-example {
-  font-family: oFontsGetFontFamilyWithFallbacks(Clarion);
-}
-
 .demo-bentonsans-lighter .demo-example {
   font-family: oFontsGetFontFamilyWithFallbacks(BentonSans);
   font-weight: lighter;
@@ -50,34 +46,6 @@ $o-fonts-is-silent: false;
 .demo-bentonsans-bold .demo-example {
   font-family: oFontsGetFontFamilyWithFallbacks(BentonSans);
   font-weight: bold;
-}
-
-.demo-millerdisplay-normal .demo-example {
-  font-family: oFontsGetFontFamilyWithFallbacks(MillerDisplay);
-}
-
-.demo-millerdisplay-bold .demo-example {
-  font-family: oFontsGetFontFamilyWithFallbacks(MillerDisplay);
-  font-weight: bold;
-}
-
-.demo-millerdisplay-bolder .demo-example {
-  font-family: oFontsGetFontFamilyWithFallbacks(MillerDisplay);
-  font-weight: bolder;
-}
-
-.demo-clarion-normal .demo-example {
-  font-family: oFontsGetFontFamilyWithFallbacks(Clarion);
-}
-
-.demo-clarion-bold .demo-example {
-  font-family: oFontsGetFontFamilyWithFallbacks(Clarion);
-  font-weight: bold;
-}
-
-.demo-clarion-italic .demo-example {
-  font-family: oFontsGetFontFamilyWithFallbacks(Clarion);
-  font-style: italic;
 }
 
 .demo-financierdisplay-normal .demo-example {
@@ -118,6 +86,28 @@ $o-fonts-is-silent: false;
 
 .demo-metric-bold-italic .demo-example {
   font-family: oFontsGetFontFamilyWithFallbacks(Metric);
+  font-style: italic;
+  font-weight: bold;
+}
+
+.demo-georgia-normal .demo-example {
+  font-family: oFontsGetFontFamilyWithFallbacks(Georgia);
+  font-style: normal;
+}
+
+.demo-georgia-italic .demo-example {
+  font-family: oFontsGetFontFamilyWithFallbacks(Georgia);
+  font-style: italic;
+}
+
+.demo-georgia-bold .demo-example {
+  font-family: oFontsGetFontFamilyWithFallbacks(Georgia);
+  font-style: normal;
+  font-weight: bold;
+}
+
+.demo-georgia-bold-italic .demo-example {
+  font-family: oFontsGetFontFamilyWithFallbacks(Georgia);
   font-style: italic;
   font-weight: bold;
 }
