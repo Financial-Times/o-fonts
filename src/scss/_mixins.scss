@@ -25,49 +25,51 @@
 /// @require $_o-fonts-families
 /// @require $_o-fonts-families-included
 @mixin oFontsInclude($family, $weight: regular, $style: normal) {
-	@if $family == 'Clarion' {
-		@warn "Clarion has been removed, no font will be included. Use Georgia instead";
-	}
-	$font-exists: false;
-	// Check if the font has already been included
-	// If so, no need to output another @font-face declaration
-	$font-is-already-included: map-has-key($_o-fonts-families-included, #{$family}-#{$weight}-#{$style});
-
-	@if $font-is-already-included == false {
-		@if map-has-key($_o-fonts-families, $family) == false {
-			@warn 'Font #{$family} not found. Must be one of $_o-fonts-families.';
-		} @else {
-			@if (_oFontsVariantExists($family, $weight, $style)) {
-				$font-exists: true;
-			} @else {
-				@warn 'Variant "weight: #{$weight}, style: #{$style}" not found for "#{$family}". @font-face rule will not be output.';
-			}
+	@if not $o-fonts-is-silent {
+		@if $family == 'Clarion' {
+			@warn "Clarion has been removed, no font will be included. Use Georgia instead";
 		}
-
-		@if ($font-exists) {
-			// Files are named as follows
-			// Name-WeightType
-			// MetricWeb-Regular              (regular normal)
-			// MetricWeb-RegularItalic        (regular italic)
-			// MetricWeb-Bold                 (bold normal)
-			// MetricWeb-BoldItalic           (bold italic)
-
-			// By default, suffix is the weight
-			$font-suffix: _oFontsStringCapitalise($weight);
-
-			@if ($style != 'normal') {
-				$font-suffix: #{_oFontsStringCapitalise($weight)}#{_oFontsStringCapitalise($style)};
+		$font-exists: false;
+		// Check if the font has already been included
+		// If so, no need to output another @font-face declaration
+		$font-is-already-included: map-has-key($_o-fonts-families-included, #{$family}-#{$weight}-#{$style});
+	
+		@if $font-is-already-included == false {
+			@if map-has-key($_o-fonts-families, $family) == false {
+				@warn 'Font #{$family} not found. Must be one of $_o-fonts-families.';
+			} @else {
+				@if (_oFontsVariantExists($family, $weight, $style)) {
+					$font-exists: true;
+				} @else {
+					@warn 'Variant "weight: #{$weight}, style: #{$style}" not found for "#{$family}". @font-face rule will not be output.';
+				}
 			}
-
-			@font-face {
-				@include oFontsSource(#{$family}-#{$font-suffix});
-				font-family: $family;
-				font-weight: oFontsWeight($weight);
-				font-style: $style;
+	
+			@if ($font-exists) {
+				// Files are named as follows
+				// Name-WeightType
+				// MetricWeb-Regular              (regular normal)
+				// MetricWeb-RegularItalic        (regular italic)
+				// MetricWeb-Bold                 (bold normal)
+				// MetricWeb-BoldItalic           (bold italic)
+	
+				// By default, suffix is the weight
+				$font-suffix: _oFontsStringCapitalise($weight);
+	
+				@if ($style != 'normal') {
+					$font-suffix: #{_oFontsStringCapitalise($weight)}#{_oFontsStringCapitalise($style)};
+				}
+	
+				@font-face {
+					@include oFontsSource(#{$family}-#{$font-suffix});
+					font-family: $family;
+					font-weight: oFontsWeight($weight);
+					font-style: $style;
+				}
+	
+				// Add to the list of already included families / variants
+				$_o-fonts-families-included: map-merge($_o-fonts-families-included, (#{$family}-#{$weight}-#{$style}: true)) !global;
 			}
-
-			// Add to the list of already included families / variants
-			$_o-fonts-families-included: map-merge($_o-fonts-families-included, (#{$family}-#{$weight}-#{$style}: true)) !global;
 		}
 	}
 }
@@ -76,9 +78,11 @@
 ///
 /// @require $_o-fonts-families
 @mixin oFontsIncludeAll {
-	@each $family, $properties in $_o-fonts-families {
-		@each $variant in map-get($properties, variants) {
-			@include oFontsInclude($family, map-get($variant, weight), map-get($variant, style));
+	@if not $o-fonts-is-silent {
+		@each $family, $properties in $_o-fonts-families {
+			@each $variant in map-get($properties, variants) {
+				@include oFontsInclude($family, map-get($variant, weight), map-get($variant, style));
+			}
 		}
 	}
 }
