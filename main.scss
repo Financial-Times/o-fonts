@@ -4,4 +4,8 @@
 
 @if ($o-fonts-is-silent == false) {
 	@include oFontsIncludeAll();
+
+	// Output font-face declaration only once,
+	// since CSSO won't get rid of duplicate ones
+	$o-fonts-is-silent: true;
 }
