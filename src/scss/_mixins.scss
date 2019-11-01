@@ -10,7 +10,8 @@
 /// @param {String} $family - one of $o-fonts-families
 /// @param {String} $weight [regular] - one of $_o-fonts-weights
 /// @param {String} $style [normal]
-@mixin oFontsInclude($family, $weight: regular, $style: normal) {
+/// @param {String|Null} $display [null] - the font-display property for this font face
+@mixin oFontsInclude($family, $weight: regular, $style: normal, $display: null) {
 	@if $family == 'Clarion' or $family == 'Benton' or $family == 'Miller' or $family == 'FinancierTextWeb' {
 		@error "#{$family} has been removed, no font will be included.";
 	}
@@ -65,6 +66,7 @@
 				font-family: $family;
 				font-weight: oFontsWeight($weight);
 				font-style: $style;
+				font-display: $display;
 			}
 
 			// Add to the list of already included families / variants
