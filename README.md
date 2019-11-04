@@ -65,6 +65,19 @@ For example to include font faces for `MetricWeb` in normal and semibold weights
 ));
 ```
 
+### Font Loading
+
+By default [font-display](https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display) is set to `swap`. In supporting browsers a system font is shown until fonts are loaded. To update your font loading method set `$o-fonts-display` at the top of your Sass, before including any other component.
+
+```scss
+// Customise font loading.
+$o-fonts-display: 'optional';
+@import 'o-fonts/main';
+
+
+@include oFonts();
+```
+
 ### Use a custom font family
 
 To register a custom font and supported variants, use the mixin `oFontsDefineCustomFont`.
