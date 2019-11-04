@@ -50,20 +50,19 @@ To include [default fonts for your brand](#fonts-included-by-default), call `oFo
 @include oFonts();
 ```
 
-_If you want to include an Origami font which is not included by default for your brand, [specifically load the font](#load-a-specific-web-font-provided-by-origami) separately._
+You may also include specific fonts granularly using an options `$opts` map. The map has a key for each font `metric` or `financier-display`, which accepts a list of weight and styles to include.
 
-### Load a specific web font provided by Origami
-
+For example to include font faces for `MetricWeb` in normal and semibold weights, and regular `FinancierDisplayWeb`:
 ```scss
-@import 'o-fonts/main';
-
-// @font-face declarations for all Financier Display weights
-@include oFontsInclude(FinancierDisplayWeb, light);
-@include oFontsInclude(FinancierDisplayWeb, regular);
-@include oFontsInclude(FinancierDisplayWeb, bold);
-
-// @font-face declarations for Metric regular / italic
-@include oFontsInclude(MetricWeb, $weight: regular, $style: italic);
+@include oFonts($opts: (
+	'metric': (
+        ('weight': 'regular', 'style': 'normal'),
+        ('weight': 'semibold', 'style': 'normal')
+    ),
+	'financier-display': (
+        ('weight': 'regular', 'style': 'normal')
+    )
+));
 ```
 
 ### Use a custom font family
@@ -122,23 +121,9 @@ $allowed: oFontsVariantExists('MetricWeb', 'black', 'italic'); // false
 
 Note: font files are contained in a separate, private repository ([o-fonts-assets](https://github.com/Financial-Times/o-fonts-assets)).
 
-1. Open `src/scss/_variables.scss` and add the font family name (if it's an entirely new family) and the variant styles to the `$o-fonts-families` map:
+1. Open `src/scss/_variables.scss` and add the font family name (if it's an entirely new family) and the variant styles to the private `$_o-fonts-families` map.
 
-```scss
-$o-fonts-families: (
-	MetricWeb: (
-		font-family: 'MetricWeb, sans-serif',
-		variants: (
-			(weight: lighter, style: normal),
-			(weight: normal,  style: normal),
-			(weight: bold,    style: normal)
-		)
-	),
-	// …
-);
-```
-
-2. Second, if adding an entirely new font, indicate brand support by adding the font name to `$_o-fonts-default-families`. This will determine when the [font is included by default](#fonts-included-by-default).
+2. Second, if adding an entirely new font, add a new option to the `oFonts` mixin. To include the new [font by default](#fonts-included-by-default) for only some brands assign a variable of default variants conditionally (see `$_o-fonts-default-financier-display-variants`).
 
 3. Finally, update the demos (see `origami.json`).
 

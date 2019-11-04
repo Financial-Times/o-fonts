@@ -28,8 +28,7 @@
 ///     ));
 @mixin oFonts($opts: (
 	'metric': $_o-fonts-default-metric-variants,
-	'financier-display': $_o-fonts-default-financier-display-variants,
-	'display': null
+	'financier-display': $_o-fonts-default-financier-display-variants
 )) {
 	// Map of options to font name.
 	$fonts: (
@@ -50,10 +49,8 @@
 			@if(type-of($style) != 'string') {
 				@error 'Could not include the "#{$family}" font with style "#{inspect($style)}". Excepted a string.';
 			}
-			// Get the chosen `font-display`.
-			$display: map-get($opts, 'display');
 			// Include the font face for this variant.
-			@include oFontsInclude($family, $weight, $style, $display);
+			@include _oFontsInclude($family, $weight, $style);
 		}
 	}
 }

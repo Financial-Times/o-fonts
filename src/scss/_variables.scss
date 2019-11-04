@@ -8,6 +8,15 @@ $o-fonts-path: 'https://www.ft.com/__origami/service/build/v2/files/o-fonts-asse
 /// @type Bool
 $o-fonts-is-silent: true !default;
 
+/// The default `font-display` property of included font faces.
+/// https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display
+///
+/// @type String|Null
+$o-fonts-display: 'swap' !default;
+
+/// A list of all weight and style variants of the MetricWeb font.
+/// @type List
+/// @access private
 $_o-fonts-all-metric-variants: (
 	(weight: thin, style: normal),
 	(weight: light, style: normal),
@@ -20,6 +29,9 @@ $_o-fonts-all-metric-variants: (
 	(weight: bold, style: italic),
 );
 
+/// A list of all weight and style variants of the FinancierDisplayWeb font.
+/// @type List
+/// @access private
 $_o-fonts-all-financier-display-variants: (
 	(weight: light, style: italic),
 	(weight: regular, style: normal),
@@ -28,12 +40,12 @@ $_o-fonts-all-financier-display-variants: (
 	(weight: bold, style: normal)
 );
 
-/// The MetricWeb variants to include by default, which may vary per brand.
+/// The MetricWeb variants to include by default, which vary per brand.
 /// @see oFonts
 /// @access private
 $_o-fonts-default-metric-variants: ();
 
-/// The FinancierDisplayWeb font variants to include by default, which may vary per brand.
+/// The FinancierDisplayWeb font variants to include by default, which vary per brand.
 /// @see oFonts
 /// @access private
 $_o-fonts-default-financier-display-variants: ();
@@ -51,7 +63,8 @@ $_o-fonts-default-financier-display-variants: ();
 /// All available font families.
 ///
 /// @type Map
-$o-fonts-families: (
+/// @access private
+$_o-fonts-families: (
 	MetricWeb: (
 		font-family: 'MetricWeb, sans-serif',
 		variants: $_o-fonts-all-metric-variants
