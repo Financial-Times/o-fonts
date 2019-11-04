@@ -4,7 +4,7 @@
 
 The Sass variable `$o-fonts-families` is now private. Use `oFonts` options to include fonts granularly and `oFontsDefineCustomFont` to register new fonts. Contact the Origami team if you need this variable for any other reason.
 
-The Sass mixin `oFontsInclude` is now private. Replace with a single call to `oFonts` and the correct options.
+The Sass mixin `oFontsInclude` and deprecated mixin `oFontsIncludeAll` is now private. Replace with a single call to `oFonts` and the correct options.
 
 ```diff
 -@include oFontsInclude(FinancierDisplayWeb);

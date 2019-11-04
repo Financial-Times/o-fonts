@@ -76,18 +76,6 @@
 	}
 }
 
-/// Output all Font-face declarations which are provided by Origami.
-/// @deprecated Use oFonts instead.
-@mixin _oFontsIncludeAll {
-	@each $family, $properties in $_o-fonts-families {
-		@if not map-get($properties, 'custom') {
-			@each $variant in map-get($properties, variants) {
-				@include _oFontsInclude($family, map-get($variant, weight), map-get($variant, style));
-			}
-		}
-	}
-}
-
 /// Output custom Font-face declarations and register the family and variants with o-fonts.
 ///
 /// @example This example shows registering a custom font "MyFont" with "sans" fallback. The font allows regular or bold variants.
