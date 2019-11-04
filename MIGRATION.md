@@ -25,7 +25,7 @@ The Sass mixin `oFontsInclude` and deprecated mixin `oFontsIncludeAll` is now pr
 +));
 ```
 
-The Sass mixin `oFontsSource` and function `oFontsUseAsset` have been removed. If you are unable to included your font with `oFonts` please contact the Origami team/
+The Sass mixin `oFontsSource` and function `oFontsUseAsset` have been removed. If you are unable to included your font with `oFonts` please contact the Origami team.
 
 ### Migrating from v2 to v3
 
