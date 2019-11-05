@@ -35,7 +35,7 @@
 /// @return {String} - font-stack
 @function oFontsGetFontFamilyWithFallbacks($family) {
 	@if not map-has-key($_o-fonts-families, $family) {
-		@error 'Font "#{inspect($family)}" not found. Must be one of #{map-keys($_o-fonts-families)}.';
+		@error 'Font "#{inspect($family)}" not found. "$family" must be one of #{map-keys($_o-fonts-families)}.';
 	}
 
 	$properties: map-get($_o-fonts-families, $family);
