@@ -11,24 +11,24 @@
 		@include assert-equal(
 			$_o-fonts-families-included,
 			(
-                'MetricWeb-thin-normal': true,
-                'MetricWeb-light-normal': true,
-                'MetricWeb-light-italic': true,
-                'MetricWeb-regular-normal': true,
-                'MetricWeb-regular-italic': true,
-                'MetricWeb-medium-normal': true,
-                'MetricWeb-semibold-normal': true,
-                'MetricWeb-bold-normal': true,
-                'MetricWeb-bold-italic': true,
-                'FinancierDisplayWeb-light-italic': true,
-                'FinancierDisplayWeb-regular-normal': true,
-                'FinancierDisplayWeb-regular-italic': true,
-                'FinancierDisplayWeb-medium-italic': true,
-                'FinancierDisplayWeb-medium-normal': true,
-                'FinancierDisplayWeb-semibold-italic': true,
-                'FinancierDisplayWeb-bold-normal': true
-            )
-        );
+				'MetricWeb-thin-normal': true,
+				'MetricWeb-light-normal': true,
+				'MetricWeb-light-italic': true,
+				'MetricWeb-regular-normal': true,
+				'MetricWeb-regular-italic': true,
+				'MetricWeb-medium-normal': true,
+				'MetricWeb-semibold-normal': true,
+				'MetricWeb-bold-normal': true,
+				'MetricWeb-bold-italic': true,
+				'FinancierDisplayWeb-light-italic': true,
+				'FinancierDisplayWeb-regular-normal': true,
+				'FinancierDisplayWeb-regular-italic': true,
+				'FinancierDisplayWeb-medium-italic': true,
+				'FinancierDisplayWeb-medium-normal': true,
+				'FinancierDisplayWeb-semibold-italic': true,
+				'FinancierDisplayWeb-bold-normal': true
+			)
+		);
 		$_o-fonts-families-included: $original-o-fonts-families-included !global;
 	}
 
@@ -43,12 +43,12 @@
 		@include assert-equal(
 			$_o-fonts-families-included,
 			(
-                'MetricWeb-regular-normal': true,
-                'MetricWeb-semibold-normal': true,
-                'FinancierDisplayWeb-medium-normal': true,
-                'FinancierDisplayWeb-bold-normal': true
-            )
-        );
+				'MetricWeb-regular-normal': true,
+				'MetricWeb-semibold-normal': true,
+				'FinancierDisplayWeb-medium-normal': true,
+				'FinancierDisplayWeb-bold-normal': true
+			)
+		);
 		$_o-fonts-families-included: $original-o-fonts-families-included !global;
 	}
 
@@ -57,9 +57,9 @@
 		@include oFonts($opts: (
 			'recommended': true,
 			'financier-display': (
-        		(weight: regular, style: normal) 
-        	)
-        ));
+				(weight: regular, style: normal) 
+			)
+		));
 
 		// The font faces are output.
 		// o-fonts keeps track of included fonts, we can't test font-faces
@@ -68,13 +68,13 @@
 		@include assert-equal(
 			$_o-fonts-families-included,
 			(
-                'MetricWeb-regular-normal': true,
-                'MetricWeb-semibold-normal': true,
-                'FinancierDisplayWeb-medium-normal': true,
-                'FinancierDisplayWeb-bold-normal': true,
-                'FinancierDisplayWeb-regular-normal': true
-            )
-        );
+				'MetricWeb-regular-normal': true,
+				'MetricWeb-semibold-normal': true,
+				'FinancierDisplayWeb-medium-normal': true,
+				'FinancierDisplayWeb-bold-normal': true,
+				'FinancierDisplayWeb-regular-normal': true
+			)
+		);
 		$_o-fonts-families-included: $original-o-fonts-families-included !global;
 	}
 }
@@ -92,24 +92,24 @@
 		@include assert-equal(
 			$_o-fonts-families-included,
 			(
-                'MetricWeb-thin-normal': true,
-                'MetricWeb-light-normal': true,
-                'MetricWeb-light-italic': true,
-                'MetricWeb-regular-normal': true,
-                'MetricWeb-regular-italic': true,
-                'MetricWeb-medium-normal': true,
-                'MetricWeb-semibold-normal': true,
-                'MetricWeb-bold-normal': true,
-                'MetricWeb-bold-italic': true,
-                'FinancierDisplayWeb-light-italic': true,
-                'FinancierDisplayWeb-regular-normal': true,
-                'FinancierDisplayWeb-regular-italic': true,
-                'FinancierDisplayWeb-medium-italic': true,
-                'FinancierDisplayWeb-medium-normal': true,
-                'FinancierDisplayWeb-semibold-italic': true,
-                'FinancierDisplayWeb-bold-normal': true
-            )
-        );
+				'MetricWeb-thin-normal': true,
+				'MetricWeb-light-normal': true,
+				'MetricWeb-light-italic': true,
+				'MetricWeb-regular-normal': true,
+				'MetricWeb-regular-italic': true,
+				'MetricWeb-medium-normal': true,
+				'MetricWeb-semibold-normal': true,
+				'MetricWeb-bold-normal': true,
+				'MetricWeb-bold-italic': true,
+				'FinancierDisplayWeb-light-italic': true,
+				'FinancierDisplayWeb-regular-normal': true,
+				'FinancierDisplayWeb-regular-italic': true,
+				'FinancierDisplayWeb-medium-italic': true,
+				'FinancierDisplayWeb-medium-normal': true,
+				'FinancierDisplayWeb-semibold-italic': true,
+				'FinancierDisplayWeb-bold-normal': true
+			)
+		);
 		$_o-fonts-families-included: $original-o-fonts-families-included !global;
 	}
 
@@ -124,12 +124,12 @@
 		@include assert-equal(
 			$_o-fonts-families-included,
 			(
-                'MetricWeb-regular-normal': true,
-                'MetricWeb-semibold-normal': true,
-                'FinancierDisplayWeb-medium-normal': true,
-                'FinancierDisplayWeb-bold-normal': true
-            )
-        );
+				'MetricWeb-regular-normal': true,
+				'MetricWeb-semibold-normal': true,
+				'FinancierDisplayWeb-medium-normal': true,
+				'FinancierDisplayWeb-bold-normal': true
+			)
+		);
 		$_o-fonts-families-included: $original-o-fonts-families-included !global;
 	}
 
@@ -138,9 +138,9 @@
 		@include oFontsVariantsIncluded($opts: (
 			'recommended': true,
 			'financier-display': (
-        		(weight: regular, style: normal) 
-        	)
-        ));
+				(weight: regular, style: normal) 
+			)
+		));
 
 		// The font faces are output.
 		// o-fonts keeps track of included fonts, we can't test font-faces
@@ -149,13 +149,13 @@
 		@include assert-equal(
 			$_o-fonts-families-included,
 			(
-                'MetricWeb-regular-normal': true,
-                'MetricWeb-semibold-normal': true,
-                'FinancierDisplayWeb-medium-normal': true,
-                'FinancierDisplayWeb-bold-normal': true,
-                'FinancierDisplayWeb-regular-normal': true
-            )
-        );
+				'MetricWeb-regular-normal': true,
+				'MetricWeb-semibold-normal': true,
+				'FinancierDisplayWeb-medium-normal': true,
+				'FinancierDisplayWeb-bold-normal': true,
+				'FinancierDisplayWeb-regular-normal': true
+			)
+		);
 		$_o-fonts-families-included: $original-o-fonts-families-included !global;
 	}
 }
@@ -169,7 +169,7 @@
 				@include oFontsDefineCustomFont('MyFont, sans', (
 					(weight: regular, style: normal),
 					(weight: bold, style: normal)
-                )) {
+				)) {
 					// True wraps this test in a class. We can't do that with font-face.
 					// Instead test mixin content is output with arbitrary CSS.
 					content: 'Just a test. Font face here.';
@@ -184,6 +184,6 @@
 		@include assert-equal(
 			$_o-fonts-families,
 			("MyFont": ("font-family": "MyFont, sans", "variants": ((weight: regular, style: normal), (weight: bold, style: normal)), "custom": true), MetricWeb: (font-family: "MetricWeb, sans-serif", variants: ((weight: thin, style: normal), (weight: light, style: normal), (weight: light, style: italic), (weight: regular, style: normal), (weight: regular, style: italic), (weight: medium, style: normal), (weight: semibold, style: normal), (weight: bold, style: normal), (weight: bold, style: italic))), FinancierDisplayWeb: (font-family: "FinancierDisplayWeb, serif", variants: ((weight: light, style: italic), (weight: regular, style: normal), (weight: regular, style: italic), (weight: medium, style: italic), (weight: medium, style: normal), (weight: semibold, style: italic), (weight: bold, style: normal))))
-        );
+		);
 	}
 }
