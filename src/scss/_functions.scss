@@ -155,10 +155,7 @@
 				@error 'Could not include the "#{$family}" font with style "#{inspect($style)}". Excepted a string.';
 			}
 			// Include the font face for this variant.
-			$all-validated-variants: append(
-				$all-validated-variants,
-				('family': $family, 'weight': $weight, 'style': $style)
-			);
+			$all-validated-variants: append($all-validated-variants, ('family': $family, 'weight': $weight, 'style': $style));
 		}
 	}
 	@return $all-validated-variants;
