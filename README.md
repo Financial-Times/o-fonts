@@ -142,7 +142,7 @@ In this example we register a custom font "MyFont" with sans fallback `MyFont, s
         font-style: normal;
     }
     @font-face{
-        src: url('MyFont-Bold.woff2') format(woff2), url('MyFont-Bold.woff') format(woff);
+        src: url('MyFont-Bold.woff2') format('woff2'), url('MyFont-Bold.woff') format('woff');
         font-family: MyFont;
         font-weight: 700;
         font-style: normal;
