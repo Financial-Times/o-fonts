@@ -8,7 +8,7 @@
     },
     "main": "main.js",
     "peerDependencies": {
-        "@financial-times/o-brand": "^3.2.5"
+        "@financial-times/o-brand": "^100.0.0-3"
     },
     "description": "Loads CSS declarations for FT web fonts. Does not include font assets.",
     "publishConfig": {
