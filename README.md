@@ -90,13 +90,13 @@ Any of the below fonts may be included with `o-fonts` using [SASS](#sass). Build
 To include [all fonts for your brand](#fonts-included-by-default), call `oFonts`.
 
 ```scss
-@import 'o-fonts/main';
+@import '@financial-times/o-fonts/main';
 @include oFonts();
 ```
 
 To improve site performance, Origami components use a more limited set of font faces. To included only the recommended set of font faces, set `recommended: true` in the options `$opts` map.
 ```scss
-@import 'o-fonts/main';
+@import '@financial-times/o-fonts/main';
 @include oFonts($opts: ('recommended': true));
 ```
 
@@ -124,7 +124,7 @@ By default [font-display](https://developer.mozilla.org/en-US/docs/Web/CSS/@font
 ```scss
 // Customise font loading.
 $o-fonts-display: 'optional';
-@import 'o-fonts/main';
+@import '@financial-times/o-fonts/main';
 
 
 @include oFonts();
