@@ -1,6 +1,6 @@
 {
   "name": "@financial-times/o-fonts",
-  "version": "100.0.0-10",
+  "version": "100.0.0-11",
   "description": "Loads CSS declarations for FT web fonts. Does not include font assets.",
   "keywords": [],
   "homepage": "https://github.com/Financial-Times/o-fonts#readme",
@@ -29,7 +29,7 @@
     "typescript": "^4.0.5"
   },
   "peerDependencies": {
-    "@financial-times/o-brand": "^100.0.0-10"
+    "@financial-times/o-brand": "^100.0.0-11"
   },
   "publishConfig": {
     "registry": "https://origami-npm-registry-prototype.herokuapp.com"
