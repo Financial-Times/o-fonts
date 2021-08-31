@@ -27,7 +27,7 @@
 		"stylelint-config-origami-component": "^1.0.4"
 	},
 	"peerDependencies": {
-		"@financial-times/o-brand": "4.0.2"
+		"@financial-times/o-brand": "^4.0.2"
 	},
 	"engines": {
 		"npm": "^7"
