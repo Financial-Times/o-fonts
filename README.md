@@ -1,5 +1,11 @@
 # o-fonts [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](#licence)
 
+***
+
+**This component has moved to the [Origami Component System](https://github.com/Financial-Times/origami).**
+
+***
+
 _Use `o-fonts` to include Origami provided fonts, or register supported custom fonts._
 
 -   [Usage](#usage)
