@@ -20,13 +20,17 @@
 				'MetricWeb-semibold-normal': true,
 				'MetricWeb-bold-normal': true,
 				'MetricWeb-bold-italic': true,
+				'MetricWeb-black-normal': true,
+				'FinancierDisplayWeb-light-normal': true,
 				'FinancierDisplayWeb-light-italic': true,
 				'FinancierDisplayWeb-regular-normal': true,
 				'FinancierDisplayWeb-regular-italic': true,
 				'FinancierDisplayWeb-medium-italic': true,
 				'FinancierDisplayWeb-medium-normal': true,
+				'FinancierDisplayWeb-semibold-normal': true,
 				'FinancierDisplayWeb-semibold-italic': true,
-				'FinancierDisplayWeb-bold-normal': true
+				'FinancierDisplayWeb-bold-normal': true,
+				'FinancierDisplayWeb-black-normal': true
 			)
 		);
 		$_o-fonts-families-included: $original-o-fonts-families-included !global;
@@ -57,7 +61,10 @@
 		@include oFonts($opts: (
 			'recommended': true,
 			'financier-display': (
-				(weight: regular, style: normal)
+				(weight: 'regular', style: normal)
+			),
+			'financier-text': (
+				(weight: 'black', style: normal)
 			)
 		));
 
@@ -72,7 +79,8 @@
 				'MetricWeb-semibold-normal': true,
 				'FinancierDisplayWeb-medium-normal': true,
 				'FinancierDisplayWeb-bold-normal': true,
-				'FinancierDisplayWeb-regular-normal': true
+				'FinancierDisplayWeb-regular-normal': true,
+				'FinancierTextWeb-black-normal': true
 			)
 		);
 		$_o-fonts-families-included: $original-o-fonts-families-included !global;
@@ -101,16 +109,20 @@
 					'MetricWeb-medium-normal',
 					'MetricWeb-semibold-normal',
 					'MetricWeb-bold-normal',
-					'MetricWeb-bold-italic'
+					'MetricWeb-bold-italic',
+          'MetricWeb-black-normal'
 				),
 				'FinancierDisplayWeb': (
+  		    'FinancierDisplayWeb-light-normal'
 					'FinancierDisplayWeb-light-italic',
 					'FinancierDisplayWeb-regular-normal',
 					'FinancierDisplayWeb-regular-italic',
 					'FinancierDisplayWeb-medium-italic',
 					'FinancierDisplayWeb-medium-normal',
+   				'FinancierDisplayWeb-semibold-normal',
 					'FinancierDisplayWeb-semibold-italic',
-					'FinancierDisplayWeb-bold-normal'
+					'FinancierDisplayWeb-bold-normal',
+					'FinancierDisplayWeb-black-normal'
 				)
 			)
 		);

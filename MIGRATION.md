@@ -1,5 +1,11 @@
 ## Migration guide
 
+### Migrating from v4 to v5
+
+V5 has dropped support for use through Bower.
+
+Follow [the migration guide on the Origami website](https://origami.ft.com/docs/tutorials/bower-to-npm/).
+
 ### Migrating from v3 to v4
 
 The Sass variable `$o-fonts-families` is now private. Use `oFonts` options to include fonts granularly and `oFontsDefineCustomFont` to register new fonts. Contact the Origami team if you need this variable for any other reason.

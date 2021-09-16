@@ -1,4 +1,4 @@
-@import "o-brand/main";
+@import "@financial-times/o-brand/main";
 
 @import "src/scss/variables";
 @import "src/scss/functions";
@@ -36,6 +36,13 @@
 ///     @include oFonts($opts: (
 ///     	'metric': ((weight: regular, style: normal)),
 ///     	'financier-display': ((weight: regular, style: normal))
+///     ));
+///
+/// @example Include only black weighted font faces for MetricWeb, FinancierDisplayWeb, and FinancierTextWeb.
+///     @include oFonts($opts: (
+///     	'metric': ((weight: 'black', style: normal)),
+///     	'financier-display': ((weight: 'black', style: normal)),
+///     	'financier-text': ((weight: 'black', style: normal))
 ///     ));
 /// @param {Map} $opts - the font faces to include, see the README or examples for more details.
 @mixin oFonts($opts: $_o-fonts-default) {
